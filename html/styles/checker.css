@@ -1,3 +1,4 @@
-.container {
-	margin: auto;
+* {
+	display: grid;
+	justify-content: center;
 }
