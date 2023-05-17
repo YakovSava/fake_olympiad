@@ -1,26 +1,30 @@
 from aiohttp.web import Application, RouteTableDef, Response, Request, run_app
-from components.static import routes
+from components.static import routes as static
+from components.api import routes as api
 from components.binder import Binder
 
 binder = Binder()
 app = Application()
-main_routes = RouteTableDef()
+routes = RouteTableDef()
 
 
-@main_routes.get('/')
+@routes.get('/')
 async def main_handler(request: Request):
     return Response(**(await binder.get_page('index.html')))
 
-@main_routes.get('/check')
-async def search_handler(request:Request):
+
+@routes.get('/check')
+async def search_handler(request: Request):
     return Response(**(await binder.get_page('search.html')))
 
-@main_routes.get('/sertificates/{sertificatesheet}')
-async def sertificate_handler(request:Request):
+
+@routes.get('/sertificates/{sertificatesheet}')
+async def sertificate_handler(request: Request):
     return Response(**(await binder.get_page(f'sertificates/{str(request.url).split("/")[-1]}')))
 
 
 if __name__ == '__main__':
     app.add_routes(routes)
-    app.add_routes(main_routes)
+    app.add_routes(static)
+    app.add_routes(api)
     run_app(app, host='192.168.100.9', port=80)

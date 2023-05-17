@@ -6,10 +6,11 @@ async function get(method, data) {
 async function search() {
 	let input = document.getElementById('inp');
 	const searched = await get('checkSertificate', {number: input.value});
+	console.log(searched);
 
-	let mainDiv = document.getElementsById('sertificate');
+	let mainDiv = document.getElementById('sertificate');
 	if (searched.response) {
-		mainDiv.innerHTML = `<object data="${searched.sertificate}.html" type="text/html"></object>`;
+		mainDiv.innerHTML = `<hr><object data="${searched.sertificate}.html" type="text/html" width="1500px" height="1500px"></object>`;
 	} else {
 		mainDiv.innerHTML = 'Такого сертификата не существует!';
 	}

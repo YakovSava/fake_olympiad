@@ -26,10 +26,9 @@ async def api_page(request: Request):
     data = _split(str(request.url).split('?')[-1])
     try:
         if data['method'] == 'checkSertificate':
-            async with aiopen(f"html/sertificate/{data['data']['number']}.html", 'r', encoding='utf-8') as file:
-                return json_response(data={
-                    'response': data['data']['number'] in listdir('html/sertificate/'),
-                    'sertificate': await file.read()
-                })
+            return json_response(data={
+                'response': f"{data['data']['number']}.html" in listdir('html/sertificates/'),
+                'sertificate': f"/sertificates/{data['data']['number']}"
+            })
     except:
         return json_response(data={'response': 0})
