@@ -9,7 +9,15 @@ main_routes = RouteTableDef()
 
 @main_routes.get('/')
 async def main_handler(request: Request):
-    return Response(body=await binder.get_page('index.html'))
+    return Response(**(await binder.get_page('index.html')))
+
+@main_routes.get('/check')
+async def search_handler(request:Request):
+    return Response(**(await binder.get_page('search.html')))
+
+@main_routes.get('/sertificates/{sertificatesheet}')
+async def sertificate_handler(request:Request):
+    return Response(**(await binder.get_page(f'sertificates/{str(request.url).split("/")[-1]}')))
 
 
 if __name__ == '__main__':
