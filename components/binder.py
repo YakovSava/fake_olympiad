@@ -3,22 +3,6 @@ from os.path import isdir, join
 from sass import compile
 from aiofiles import open as aiopen
 
-
-def _split_a_string(string: str) -> dict:
-    raw_path_parameters = string.rsplit('-', 4)
-    path_parameters = {
-        'initials': raw_path_parameters[0],
-        'floors': eval(raw_path_parameters[1].replace(',', '.')),
-        'size': list(map(
-            float,
-            (raw_path_parameters[2].replace(',', '.').replace('х', 'x').split('x')))),
-        'area': eval(raw_path_parameters[3].replace(',', '.')),
-        'surname': raw_path_parameters[4]
-    }
-
-    return path_parameters
-
-
 class Binder:
 
     def __init__(self):
