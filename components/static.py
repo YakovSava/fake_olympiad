@@ -27,3 +27,8 @@ async def image_handler(request: Request):
     path = unquote(str(request.url)).split('/')
     data = await get.get_pic(path[-3], path[-2], path[-1])
     return Response(**data)
+
+@routes.get('/images/{imagesheet}')
+async def imagehandler(request:Request):
+    data = await get.get_image(str(request.url).split('/')[-1])
+    return Response(**data)
