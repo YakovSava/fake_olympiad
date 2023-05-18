@@ -1,0 +1,228 @@
+/*------------------RESET------------------*/
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,700");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  font-family: "Open sans", sans-serif;
+  color: var(--primary-text);
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*------------------/RESET------------------*/
+/*------------------HTML------------------*/
+:root {
+  --primary-color: #607D8B;
+  --light-primary-color: #CFD8DC;
+  --primary-text: #212121;
+  --text: #fff;
+  --error-text: #FF3D3D;
+}
+
+html {
+  background-color: var(--primary-color);
+}
+
+body {
+  display: grid;
+}
+
+[class*=__container] {
+  max-width: 1312px;
+  margin: 0px auto;
+}
+
+/*------------------/HTML------------------*/
+/*------------------HEADER------------------*/
+.header__container {
+  background-color: var(--light-primary-color);
+  border-radius: 4px;
+  padding: 16px 0;
+  display: grid;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+.header h1 {
+  font-weight: 700;
+  font-size: 32px;
+  margin-right: 32px;
+}
+
+/*------------------/HEADER------------------*/
+/*------------------ASIDE------------------*/
+.aside {
+  font-weight: 600;
+  font-size: 32px;
+}
+.aside__container {
+  display: flex;
+}
+.aside__container table {
+  background-color: var(--light-primary-color);
+  border-radius: 4px;
+  margin-top: 16px;
+  margin-left: 28px;
+}
+.aside__content {
+  background-color: var(--light-primary-color);
+  border-radius: 4px;
+  margin-top: 16px;
+  max-width: 316px;
+}
+.aside form {
+  margin: 0 32px;
+  padding-top: 32px;
+}
+.error {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--error-text);
+  margin-left: 32px;
+}
+
+.clown {
+  background: #607D8B;
+  border-radius: 6px;
+  height: 8px;
+}
+
+flex {
+  display: flex;
+}
+
+.footer__container {
+  background-color: var(--light-primary-color);
+}
+
+/*------------------/ASIDE------------------*/
