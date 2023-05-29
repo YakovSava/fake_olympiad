@@ -85,7 +85,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 25px;
   font: inherit;
   vertical-align: baseline;
   text-decoration: none;
@@ -183,7 +183,7 @@ body {
 /*------------------ASIDE------------------*/
 .aside {
   font-weight: 600;
-  font-size: 32px;
+  font-size: 20px;
 }
 .aside__container {
   display: flex;

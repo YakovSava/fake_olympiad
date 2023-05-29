@@ -1,4 +1,4 @@
-from os import mkdir, listdir, getcwd
+from os import mkdir
 from os.path import isdir, join
 from sass import compile
 from aiofiles import open as aiopen
